@@ -27,12 +27,12 @@
     </nav>
 
     <div class="container mt-5 pt-5 maxwidth500">
-        <h1 class="step1_main_heading text-center">Let's get you an instant quote!</h1>
+        <h1 class="step1_main_heading text-center font-weight-bolder">Let's get you an instant quote!</h1>
         <form class="steponemain mx-auto" action="" method="post">
             <fieldset class="form-group mb-5">
                 <label for="dob-step1" class="bmd-label-floating pl-2">Date Of Birth</label>
                 <input type="text" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" minlength="10"
-                    maxlength="10" class="form-control pl-2" name="date" id="dob-step1" required>
+                    maxlength="10" class="form-control pl-2" name="date" id="dob-step1" min="1980-01-01" required>
             </fieldset>
 
             <div class="genderbtnmain w-100 d-flex">
