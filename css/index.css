@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+.step1_main_heading{
+   color:  rgb(0, 79, 120);
+   font-size: 2rem;
+}
+#dob-step1{
+ border-left: 3px solid rgb(27, 176, 219) !important;
+ border: 1px solid black;
+ font-size: 20px;
+}
+#dob-step1:focus{
+    outline: 0 none;
+    border-color: none;
+    box-shadow: none;
+}
+.btnleft{
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 50px;
+    background-color: #e6f9ff !important;
+}
+.btnright{
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 50px;
+    background-color: #e6f9ff !important;
+}
+.steponemain{
+    width:35%;
+}
+.activebtn:focus,.activebtn{
+    outline: 0 none;
+    border: 2px solid #1ba7da !important;
+    box-shadow: none;
+}
+.form-control{
+    background: none;
+}
