@@ -14,25 +14,38 @@
     box-shadow: none;
 }
 .btnleft{
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     height: 50px;
     background-color: #e6f9ff !important;
 }
 .btnright{
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     height: 50px;
     background-color: #e6f9ff !important;
 }
-.steponemain{
-    width:35%;
-}
 .activebtn:focus,.activebtn{
     outline: 0 none;
-    border: 2px solid #1ba7da !important;
+    border: 3px solid #1ba7da !important;
     box-shadow: none;
 }
 .form-control{
     background: none;
+}
+.submitstep1,.submitstep1:focus{
+    background-color: #1bb0db;
+    color: white;
+    font-weight: 700;
+    height: 50px;
+    max-width: 250px;
+}
+.maxwidth500{
+    max-width: 500px;
+}
+
+::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    color: transparent;
 }

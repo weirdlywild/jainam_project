@@ -1,14 +1,6 @@
-$(document).ready(function () {
-    $("#dob-step1").keyup(function () {
-        if ($(this).val().length == 2) {
-            $(this).val($(this).val() + "/");
-        } else if ($(this).val().length == 5) {
-            $(this).val($(this).val() + "/");
-        }
-    });
-});
 
 var buttonclickgender = null;
+var buttonclicksmoker = null;
 $(document).ready(function () {
     $("#malebtn").click(function () {
         buttonclickgender = "male";
@@ -22,6 +14,29 @@ $(document).ready(function () {
         $("#femalebtn").addClass("activebtn");
         $("#malebtn").removeClass("activebtn");
         console.log(buttonclickgender);
+    })
+
+    $("#smokerbtn").click(function () {
+        buttonclicksmoker = "smoker";
+        $("#smokerbtn").addClass("activebtn");
+        $("#nonsmokerbtn").removeClass("activebtn");
+        console.log(buttonclickgender);
+    })
+
+    $("#nonsmokerbtn").click(function () {
+        buttonclicksmoker = "nonsmoker";
+        $("#nonsmokerbtn").addClass("activebtn");
+        $("#smokerbtn").removeClass("activebtn");
+        console.log(buttonclickgender);
+    })
+    $('.submitstep1').prop('disabled', true);
+    $(".dummysubmit").click(function () {
+        if (buttonclickgender !== null && buttonclicksmoker !== null) {
+            $('#submitstep1').prop('disabled', false);
+        }
+        else {
+            $('#submitstep1').prop('disabled', true);
+        }
     })
 
 });
