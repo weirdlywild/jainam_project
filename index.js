@@ -1,6 +1,6 @@
 
-var buttonclickgender = null;
-var buttonclicksmoker = null;
+var buttonclickgender = localStorage.gender;
+var buttonclicksmoker = localStorage.smoker;
 var valuebtn = null;
 var url = "https://weirdlywild.github.io/jainam_project/teacherslife-rates.xlsx";
 // var url = "E:\\js_data\\teacherslife-rates.xlsx";
@@ -83,7 +83,7 @@ req.responseType = "arraybuffer";
 req.onload = function (e) {
     console.log(req.response)
     var data = new Uint8Array(req.response);
-    var workbook = XLSX.read(data, {type:"array"});
+    var workbook = XLSX.read(data, { type: "array" });
     console.log(workbook);
 
     //  var htmlstr = XLSX.write(workbook, {sheet:"Sheet1", type:'binary', bookType:'html'});
@@ -96,8 +96,8 @@ req.onload = function (e) {
     var worksheet = workbook.Sheets[first_sheet_name];
     console.log(XLSX.utils.sheet_to_json(worksheet));
     var xldata = XLSX.utils.sheet_to_json(worksheet);
-    for(var i = 0; i < xldata.length; i++){
-        if (xldata[i].Age == 25){
+    for (var i = 0; i < xldata.length; i++) {
+        if (xldata[i].Age == 25) {
             console.log(xldata[i].Gender);
         }
     }

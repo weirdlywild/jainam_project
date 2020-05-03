@@ -36,16 +36,17 @@
             </fieldset>
 
             <div class="genderbtnmain w-100 d-flex">
-                <input class="form-control w-50 btnleft border dummysubmit" type="button" value="Male" id="malebtn" />
+                <input class="form-control w-50 btnleft border dummysubmit" onclick="localStorage.gender= 'male'"
+                    type="button" value="Male" id="malebtn" />
                 <input class="form-control w-50 btnright border dummysubmit" type="button" value="Female"
-                    id="femalebtn" />
+                    onclick="localStorage.gender= 'female'" id="femalebtn" />
             </div>
 
             <div class="smokerbtnmain w-100 d-flex mt-4">
                 <input class="form-control w-50 btnleft border dummysubmit" type="button" value="Non-Smoker"
-                    id="nonsmokerbtn" />
-                <input class="form-control w-50 btnright border dummysubmit" type="button" value="Smoker"
-                    id="smokerbtn" />
+                    id="nonsmokerbtn" onclick="localStorage.smoker = 'nonsmoker'" />
+                <input class="form-control w-50 btnright border dummysubmit" type="button" value="Smoker" id="smokerbtn"
+                    onclick="localStorage.smoker = 'smoker'" />
             </div>
 
             <input class="form-control mt-4 submitstep1 mx-auto" type="submit" value="See Quotes" id="submitstep1" />
