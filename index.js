@@ -83,10 +83,7 @@ $(document).ready(function () {
 $(function () {
     $('[data-toggle="popover"]').popover()
 })
-<<<<<<< HEAD
 
-=======
->>>>>>> 271ba3ad1c2b5d05f3a7ca8fec386c07fdc62ea2
 // Sheet
 function updatedata(val){
     var req = new XMLHttpRequest();
@@ -110,18 +107,11 @@ function updatedata(val){
     console.log(XLSX.utils.sheet_to_json(worksheet));
     var xldata = XLSX.utils.sheet_to_json(worksheet);
     for (var i = 0; i < xldata.length; i++) {
-        if (xldata[i].Age == 25) {
-<<<<<<< HEAD
+        if (xldata[i].Age == age) {
             if(xldata[i].CoverageTerm == valuebtn){
                 if(xldata[i].CoverageAmount == val){
-                    if(xldata[i].Gender == "Male"){
-                        if(xldata[i].SmokerStatus == "Non-Smoker"){
-=======
-            if (xldata[i].CoverageTerm == 10) {
-                if (xldata[i].CoverageAmount == 500000) {
-                    if (xldata[i].Gender == "Male") {
-                        if (xldata[i].SmokerStatus == "Non-Smoker") {
->>>>>>> 271ba3ad1c2b5d05f3a7ca8fec386c07fdc62ea2
+                    if(xldata[i].Gender == buttonclickgender){
+                        if(xldata[i].SmokerStatus == buttonclicksmoker){
                             console.log(xldata[i].MonthlyPremium);
                             break;
                         }
