@@ -1,6 +1,7 @@
 
 var buttonclickgender = null;
 var buttonclicksmoker = null;
+var valuebtn = null;
 $(document).ready(function () {
     $("#malebtn").click(function () {
         buttonclickgender = "male";
@@ -40,3 +41,10 @@ $(document).ready(function () {
     })
 
 });
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
+
+
+
+

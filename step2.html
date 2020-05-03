@@ -12,13 +12,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <!-- Material Design for Bootstrap CSS -->
     <link rel="stylesheet"
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://weirdlywild.github.io/jainam_project/index.css">
-    <script src="https://weirdlywild.github.io/jainam_project/index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -27,10 +27,29 @@
     </nav>
 
     <div class="container mt-5 pt-5">
-        <h1 class="step1_main_heading text-center font-weight-bolder">Let's get you an instant quote!</h1>
-        <div class="slidecontainer w-100">
-            <p>Value: <span id="demo"></span></p>
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <h1 class="step1_main_heading text-center font-weight-bolder">Apply through PolicyMe in only 4 minutes!</h1>
+        <div class="row">
+            <div class="slidecontainer col-md-6">
+                <p><span id="demo"></span> Coverage amount
+                    <button type="button" data-toggle="popover" class="btn p-0 mb-0 ml-2" data-trigger="focus"
+                        data-content="Your coverage is the total amount of money your family will receive from your insurance company (tax free) if you pass away. The higher the coverage amount, the more expensive your policy will be, so it’s important to get quality and honest advice on your needs.">
+                        <i class="far fa-question-circle"></i>
+                    </button>
+                </p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            </div>
+            <div class="col-md-6">
+                <p><span id="btnresult"></span></p>
+                <div class="d-flex">
+                    <input class="form-control btnstep2 rounded dummysubmit" type="button" value="10 Years"
+                        id="10years" />
+                    <input class="form-control ml-2 btnstep2 rounded dummysubmit" type="button" value="20 Years"
+                        id="20years" />
+                    <input class="form-control ml-2 btnstep2 rounded dummysubmit" type="button" value="to age 65"
+                        id="till65" />
+                </div>
+
+            </div>
         </div>
     </div>
 
