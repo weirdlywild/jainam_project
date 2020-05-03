@@ -18,7 +18,7 @@
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" href="https://weirdlywild.github.io/jainam_project/index.css">
-    <script src="   index.js"></script>
+    <script src="index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.0/xlsx.full.min.js"
         integrity="sha256-uIq5SNbp7/+v19SoDL+QZjjl3LYrUOAXf0oKZn04Pp0=" crossorigin="anonymous"></script>
 </head>
@@ -38,7 +38,11 @@
                         <i class="far fa-question-circle"></i>
                     </button>
                 </p>
+<<<<<<< HEAD
                 <input type="range" min="25000" max="500000" step="25000" value="400000" class="slider" id="myRange" onchange="updatedata(this.value);">
+=======
+                <input type="range" min="25000" max="500000" step="25000" value="50000" class="slider" id="myRange">
+>>>>>>> 271ba3ad1c2b5d05f3a7ca8fec386c07fdc62ea2
             </div>
             <div class="col-md-6">
                 <p><span id="btnresult"></span> Policy Length <button type="button" data-toggle="popover"
@@ -62,14 +66,16 @@
             </div>
         </div>
     </div>
-
     <script>
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
         output.innerHTML = slider.value;
+        coverage = slider.value;
 
         slider.oninput = function () {
             output.innerHTML = this.value;
+            coverage = this.value;
+
         }
 
     </script>

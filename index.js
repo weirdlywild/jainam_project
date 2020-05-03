@@ -1,11 +1,12 @@
 
-var buttonclickgender = localStor`age`.gender;
+var buttonclickgender = localStorage.gender;
 var buttonclicksmoker = localStorage.smoker;
 var valuebtn = 10;
 var age = localStorage.age;
 var url = "https://weirdlywild.github.io/jainam_project/teacherslife-rates.xlsx";
 // var url = "E:\\js_data\\teacherslife-rates.xlsx";
-var yearselect = "10year";;
+var yearselect = "10year";
+var coverage = null;
 $(document).ready(function () {
     var init_cov = $("#myRange").val();
     updatedata(init_cov);
@@ -82,7 +83,10 @@ $(document).ready(function () {
 $(function () {
     $('[data-toggle="popover"]').popover()
 })
+<<<<<<< HEAD
 
+=======
+>>>>>>> 271ba3ad1c2b5d05f3a7ca8fec386c07fdc62ea2
 // Sheet
 function updatedata(val){
     var req = new XMLHttpRequest();
@@ -107,10 +111,17 @@ function updatedata(val){
     var xldata = XLSX.utils.sheet_to_json(worksheet);
     for (var i = 0; i < xldata.length; i++) {
         if (xldata[i].Age == 25) {
+<<<<<<< HEAD
             if(xldata[i].CoverageTerm == valuebtn){
                 if(xldata[i].CoverageAmount == val){
                     if(xldata[i].Gender == "Male"){
                         if(xldata[i].SmokerStatus == "Non-Smoker"){
+=======
+            if (xldata[i].CoverageTerm == 10) {
+                if (xldata[i].CoverageAmount == 500000) {
+                    if (xldata[i].Gender == "Male") {
+                        if (xldata[i].SmokerStatus == "Non-Smoker") {
+>>>>>>> 271ba3ad1c2b5d05f3a7ca8fec386c07fdc62ea2
                             console.log(xldata[i].MonthlyPremium);
                             break;
                         }
