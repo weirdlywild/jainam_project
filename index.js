@@ -1,11 +1,12 @@
 
-var buttonclickgender = localStor`age`.gender;
+var buttonclickgender = localStorage.gender;
 var buttonclicksmoker = localStorage.smoker;
 var valuebtn = null;
 var age = localStorage.age;
 var url = "https://weirdlywild.github.io/jainam_project/teacherslife-rates.xlsx";
 // var url = "E:\\js_data\\teacherslife-rates.xlsx";
-var yearselect = "10year";;
+var yearselect = "10year";
+var covrage = null;
 $(document).ready(function () {
     $("#malebtn").click(function () {
         buttonclickgender = "male";
@@ -75,6 +76,16 @@ $(function () {
     $('[data-toggle="popover"]').popover()
 })
 
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+
+slider.oninput = function () {
+    output.innerHTML = this.value;
+    covrage = this.value;
+
+}
 
 // Sheet
 var req = new XMLHttpRequest();
