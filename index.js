@@ -1,12 +1,15 @@
 
 var buttonclickgender = localStor`age`.gender;
 var buttonclicksmoker = localStorage.smoker;
-var valuebtn = null;
+var valuebtn = 10;
 var age = localStorage.age;
 var url = "https://weirdlywild.github.io/jainam_project/teacherslife-rates.xlsx";
 // var url = "E:\\js_data\\teacherslife-rates.xlsx";
 var yearselect = "10year";;
 $(document).ready(function () {
+    var init_cov = $("#myRange").val();
+    updatedata(init_cov);
+
     $("#malebtn").click(function () {
         buttonclickgender = "male";
         $("#malebtn").addClass("activebtn");
@@ -47,6 +50,7 @@ $(document).ready(function () {
     document.getElementById("btnresult").innerHTML = "10 years";
     $(".dummyyear").click(function () {
         if (yearselect === '10year') {
+            valuebtn = 10;
             document.getElementById("btnresult").innerHTML = "10 years";
             $("#10years").removeClass("activebtn");
             $("#20years").removeClass("activebtn");
@@ -55,6 +59,7 @@ $(document).ready(function () {
 
         }
         else if (yearselect === '20year') {
+            valuebtn = 20;
             document.getElementById("btnresult").innerHTML = "20 years";
             $("#10years").removeClass("activebtn");
             $("#20years").removeClass("activebtn");
@@ -62,12 +67,15 @@ $(document).ready(function () {
             $("#20years").addClass("activebtn");
         }
         else if (yearselect === '65year') {
+            valuebtn = 65;
             document.getElementById("btnresult").innerHTML = "to age 65";
             $("#10years").removeClass("activebtn");
             $("#20years").removeClass("activebtn");
             $("#till65").removeClass("activebtn");
             $("#till65").addClass("activebtn");
         }
+        var init_cov = $("#myRange").val();
+        updatedata(init_cov);
     })
 
 });
@@ -75,13 +83,13 @@ $(function () {
     $('[data-toggle="popover"]').popover()
 })
 
-
 // Sheet
-var req = new XMLHttpRequest();
-req.open("GET", url, true);
-req.responseType = "arraybuffer";
+function updatedata(val){
+    var req = new XMLHttpRequest();
+    req.open("GET", url, true);
+    req.responseType = "arraybuffer";
 
-req.onload = function (e) {
+    req.onload = function (e) {
     console.log(req.response)
     var data = new Uint8Array(req.response);
     var workbook = XLSX.read(data, { type: "array" });
@@ -99,8 +107,8 @@ req.onload = function (e) {
     var xldata = XLSX.utils.sheet_to_json(worksheet);
     for (var i = 0; i < xldata.length; i++) {
         if (xldata[i].Age == 25) {
-            if(xldata[i].CoverageTerm == 10){
-                if(xldata[i].CoverageAmount == 500000){
+            if(xldata[i].CoverageTerm == valuebtn){
+                if(xldata[i].CoverageAmount == val){
                     if(xldata[i].Gender == "Male"){
                         if(xldata[i].SmokerStatus == "Non-Smoker"){
                             console.log(xldata[i].MonthlyPremium);
@@ -112,5 +120,5 @@ req.onload = function (e) {
         }
     }
 }
-
 req.send();
+}
