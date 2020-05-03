@@ -2,9 +2,11 @@
 var buttonclickgender = localStorage.gender;
 var buttonclicksmoker = localStorage.smoker;
 var valuebtn = null;
+var age = localStorage.age;
 var url = "https://weirdlywild.github.io/jainam_project/teacherslife-rates.xlsx";
 // var url = "E:\\js_data\\teacherslife-rates.xlsx";
-var yearselect = "10year";
+localStorage.year = "10year";
+var yearselect = localStorage.year;
 $(document).ready(function () {
     $("#malebtn").click(function () {
         buttonclickgender = "male";
@@ -43,7 +45,7 @@ $(document).ready(function () {
         }
     })
 
-    document.getElementById("btnresult").innerHTML = "10 years";
+    document.getElementById("btnresult").innerHTML = age;
     $(".dummyyear").click(function () {
         if (yearselect === '10year') {
             document.getElementById("btnresult").innerHTML = "10 years";
