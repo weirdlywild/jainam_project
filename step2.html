@@ -17,8 +17,9 @@
     <link rel="stylesheet"
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://weirdlywild.github.io/jainam_project/index.css">
+    <script src="https://weirdlywild.github.io/jainam_project/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.0/xlsx.min.js"></script>
 </head>
 
 <body>
@@ -39,27 +40,37 @@
                 <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
             </div>
             <div class="col-md-6">
-                <p><span id="btnresult"></span></p>
+                <p><span id="btnresult"></span> Policy Length <button type="button" data-toggle="popover"
+                        class="btn p-0 mb-0 ml-2" data-trigger="focus"
+                        data-content="Your policy length is the fixed period of your term life insurance. Your insurance company will pay out your coverage amount if you pass away during that time. It is important to make sure that your policy remains active for as long as you have a significant life insurance need">
+                        <i class="far fa-question-circle"></i>
+                    </button></p>
                 <div class="d-flex">
-                    <input class="form-control btnstep2 rounded dummysubmit" type="button" value="10 Years"
-                        id="10years" />
-                    <input class="form-control ml-2 btnstep2 rounded dummysubmit" type="button" value="20 Years"
-                        id="20years" />
-                    <input class="form-control ml-2 btnstep2 rounded dummysubmit" type="button" value="to age 65"
-                        id="till65" />
+                    <input class="form-control btnstep2 rounded dummyyear activebtn" type="button" value="10 Years"
+                        id="10years" onclick="yearselect = '10year'" />
+                    <input class="form-control ml-2 btnstep2 rounded dummyyear" type="button" value="20 Years"
+                        id="20years" onclick="yearselect = '20year'" />
+                    <input class="form-control ml-2 btnstep2 rounded dummyyear" type="button" value="to age 65"
+                        id="till65" onclick="yearselect = '65year'" />
                 </div>
+
+            </div>
+
+            <div>
 
             </div>
         </div>
     </div>
 
-    <script>var slider = document.getElementById("myRange");
+    <script>
+        var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
         output.innerHTML = slider.value;
 
         slider.oninput = function () {
             output.innerHTML = this.value;
         }
+
     </script>
 </body>
 
