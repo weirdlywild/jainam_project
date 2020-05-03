@@ -12,28 +12,28 @@ $(document).ready(function () {
     updatedata(init_cov);
 
     $("#malebtn").click(function () {
-        buttonclickgender = "male";
+        buttonclickgender = "Male";
         $("#malebtn").addClass("activebtn");
         $("#femalebtn").removeClass("activebtn");
         console.log(buttonclickgender);
     })
 
     $("#femalebtn").click(function () {
-        buttonclickgender = "female";
+        buttonclickgender = "Female";
         $("#femalebtn").addClass("activebtn");
         $("#malebtn").removeClass("activebtn");
         console.log(buttonclickgender);
     })
 
     $("#smokerbtn").click(function () {
-        buttonclicksmoker = "smoker";
+        buttonclicksmoker = "Smoker";
         $("#smokerbtn").addClass("activebtn");
         $("#nonsmokerbtn").removeClass("activebtn");
         console.log(buttonclickgender);
     })
 
     $("#nonsmokerbtn").click(function () {
-        buttonclicksmoker = "nonsmoker";
+        buttonclicksmoker = "Non-Smoker";
         $("#nonsmokerbtn").addClass("activebtn");
         $("#smokerbtn").removeClass("activebtn");
         console.log(buttonclickgender);
@@ -86,6 +86,12 @@ $(function () {
 
 // Sheet
 function updatedata(val){
+    console.log(valuebtn);
+    console.log(val);
+    console.log(age);
+    console.log(buttonclickgender);
+    console.log(buttonclicksmoker);
+    console.log("mainvalue");
     var req = new XMLHttpRequest();
     req.open("GET", url, true);
     req.responseType = "arraybuffer";
@@ -113,6 +119,7 @@ function updatedata(val){
                     if(xldata[i].Gender == buttonclickgender){
                         if(xldata[i].SmokerStatus == buttonclicksmoker){
                             console.log(xldata[i].MonthlyPremium);
+                            $("#MonthlyPremium").innerHTML = xldata[i].MonthlyPremium;
                             break;
                         }
                     }
