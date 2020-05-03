@@ -100,7 +100,16 @@ req.onload = function (e) {
     var xldata = XLSX.utils.sheet_to_json(worksheet);
     for (var i = 0; i < xldata.length; i++) {
         if (xldata[i].Age == 25) {
-            console.log(xldata[i].Gender);
+            if(xldata[i].CoverageTerm == 10){
+                if(xldata[i].CoverageAmount == 500000){
+                    if(xldata[i].Gender == "Male"){
+                        if(xldata[i].SmokerStatus == "Non-Smoker"){
+                            console.log(xldata[i].MonthlyPremium);
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 }
